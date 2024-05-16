@@ -1,0 +1,73 @@
+spring:
+  #    tomcat:
+  #      max-wait: 20000
+  #      max-active: 50
+  #      max-idle: 20
+  #      min-idle: 15
+  liquibase:
+    change-log: classpath:/db/master.xml
+    enabled: false
+  messages:
+    encoding: UTF-8
+  servlet:
+    multipart:
+      max-request-size: 7MB
+      max-file-size: 7MB
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        format_sql: true
+        id:
+          new_generator_mappings: false
+    defer-datasource-initialization: false
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+  sql:
+    init:
+      mode: always
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SMTP_USER}
+    password: ${SMTP_PWD}
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+
+server:
+  port: 8080 # This is the default port anyway, but you can change it here
+
+security:
+  jwt:
+    token:
+      secret-key: Grash4785@jk
+      expire-length: 1209600000 # 1000*60*60*24*14
+
+frontend:
+  url: http://localhost:3000
+mail:
+  recipients: ${MAIL_RECIPIENTS}
+superAdmin:
+  role:
+    name: SuperAdministratorGrash@p;l
+gcp:
+  value: ${GCP_JSON}
+  project-id: ${GCP_PROJECT_ID}
+  bucket-name: ${GCP_BUCKET_NAME}
+fast-spring:
+  username: ${FASTSPRING_USER}
+  password: ${FASTSPRING_PWD}

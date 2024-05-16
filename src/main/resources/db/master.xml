@@ -1,0 +1,13 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="src/main/resources/db/changelog/liquibase-outputChangeLog.xml"
+             relativeToChangelogFile="false"/>
+    <include file="src/main/resources/db/changelog/liquibase-diffChangeLog.xml"
+             relativeToChangelogFile="false"/>
+    <include file="src/main/resources/db/changelog/ 2023_07_14_1689357579_add_simplifiedWorkOrder.xml"
+             relativeToChangelogFile="false"/>
+    <include file="src/main/resources/db/changelog/2023_07_16_1689459801_drop_barcode_nfcId_unique_constraints.xml"
+             relativeToChangelogFile="false"/>
+</databaseChangeLog>
